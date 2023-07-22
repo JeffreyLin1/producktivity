@@ -1,25 +1,30 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
+  "name": "Risu",
+  "description": "Friendly girl to help keep you company.",
+  "version": "1.0",
+  "icons":{
+      "16": "/src/ayunda.jpeg",
+      "48": "/src/ayunda.jpeg",
+      "128": "/src/ayunda.jpeg"
+  },
+  "manifest_version": 3,
+  "default_icon": "/images/duck.png",
+  "action": {
+      "default_icon":{
+              "16": "/src/ayunda.jpeg",
+              "48": "/src/ayunda.jpeg",
+              "128": "/src/ayunda.jpeg"
+      },
+      "default_popup": "index.html",
+      "default_title": "talk to risu!"
+  },
+  "permissions":[
+    "scripting",
+    "activeTab",
+    "storage"
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
-}
+  "host_permissions": [
+    "https://*/"
+  ]
+
+}   
