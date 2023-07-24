@@ -18,7 +18,7 @@ function App() {
             <TextField
               fullWidth
               autoFocus
-              label="Your text"
+              label="Message"
               variant="outlined"
               multiline
               rows={4}
@@ -33,7 +33,7 @@ function App() {
               disableElevation
               variant="contained"
               onClick={() =>handleSubmit()}>
-                Submit
+                Send
               </Button>
           </Grid>
         </Grid>
