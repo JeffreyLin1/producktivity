@@ -90,10 +90,10 @@ function App() {
                }
               >
               Send
+            </Button>
             <Grid item xs = {12} sx = {{mt:3}}>
               <Paper sx = {{p:3}}>{response}</Paper>
             </Grid>
-            </Button>
           </Grid>
         </Grid>
       </Box>
