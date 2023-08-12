@@ -1,14 +1,51 @@
 /*global chrome*/
 import logo from './logo.svg';
 import React, {useState} from "react";
+import AutorenewIcon from '@mui/icons-material/Autorenew';
+import { Configuration, OpenAIApi } from "openai";
 import './App.css';
 
-import { Box, Button, Container, Grid, TextField } from "@mui/material";
+
+
+
+import { Box, Button, Container, Grid, TextField, Paper } from "@mui/material";
+window.process = { cwd: () => '' };
 
 function App() {
   const [prompt, setPrompt] = useState("");
+  const [isLoading, setIsLoading] = useState(false)
+  const [response, setResponse] = useState("")
+  const { Configuration, OpenAIApi } = require("openai")
+  require('dotenv').config()
 
-  async function handleSubmit() {}
+
+  const configuration = new Configuration({
+    organization: "org-QQ4rRjIo3gFIX874gBfToYKR",
+    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+  }); 
+  
+
+  delete configuration.baseOptions.headers['User-Agent'];
+
+  const openai = new OpenAIApi(configuration)
+  async function handleSubmit() {
+    setIsLoading(true);
+
+    try {
+      const completion = await openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: "say the following as a black man" + prompt,
+        max_tokens: 100,
+        temperature: 1
+
+      });
+      setResponse(completion.data.choices[0].text);
+      setIsLoading(false);
+    } catch (e) {
+      alert("Error: ", e);
+      setIsLoading(false);
+    }
+  }
 
   return (
     <Container>
@@ -28,13 +65,35 @@ function App() {
                 setPrompt(e.target.value);
               }}
             />
-            <Button 
+            <Button
               fullWidth
               disableElevation
               variant="contained"
-              onClick={() =>handleSubmit()}>
-                Send
-              </Button>
+              disabled={isLoading}
+              onClick={() => handleSubmit()}
+              startIcon={
+                isLoading && (
+                  <AutorenewIcon
+                    sx={{
+                      animation: "spin 2s linear infinite",
+                        "@keyframes spin": {
+                          "0%": {
+                            transform: "rotate(360deg)",
+                          },
+                          "100%": {
+                            transform: "rotate(0deg)",
+                          },
+                        },
+                     }}
+                  />
+                )
+               }
+              >
+              Send
+            <Grid item xs = {12} sx = {{mt:3}}>
+              <Paper sx = {{p:3}}>{response}</Paper>
+            </Grid>
+            </Button>
           </Grid>
         </Grid>
       </Box>
