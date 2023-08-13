@@ -34,7 +34,7 @@ function App() {
     try {
       const completion = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt: "say the following as a black man" + prompt,
+        prompt: "respond as a duck:" + prompt,
         max_tokens: 100,
         temperature: 1
 

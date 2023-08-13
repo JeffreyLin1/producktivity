@@ -1,22 +1,22 @@
 {
-  "name": "Risu",
-  "description": "Friendly girl to help keep you company.",
+  "name": "Producktivity",
+  "description": "Duck makes sure you keep on track.",
   "version": "1.0",
   "icons":{
-      "16": "/src/ayunda.jpeg",
-      "48": "/src/ayunda.jpeg",
-      "128": "/src/ayunda.jpeg"
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
   },
   "manifest_version": 3,
-  "default_icon": "/images/duck.png",
+  "default_icon": "icon.png",
   "action": {
       "default_icon":{
-              "16": "/src/ayunda.jpeg",
-              "48": "/src/ayunda.jpeg",
-              "128": "/src/ayunda.jpeg"
+              "16": "icon.png",
+              "48": "icon.png",
+              "128": "icon.png"
       },
       "default_popup": "index.html",
-      "default_title": "talk to risu!"
+      "default_title": "converse with duck"
   },
   "permissions":[
     "scripting",
