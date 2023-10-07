@@ -3,7 +3,7 @@ Producktivity is a chrome extension made with ReactJs, aimed towards increasing 
 Utilizes the GPT API.
 
 # Usage
-Start by cloning the repository:
+Start by cloning the repo:
 ```
 $ git clone https://github.com/JeffreyLin1/producktivity.git
 ```
