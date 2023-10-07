@@ -1,5 +1,6 @@
 # ProDUCKtivity
 Producktivity is a chrome extension made with ReactJs, aimed towards increasing productivity with a friendly ai-powered duck that can cheer you on and even converse with you.
+Utilizes the GPT API.
 
 # Usage
 Start by cloning the repository:
